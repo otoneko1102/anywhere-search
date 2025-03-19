@@ -1,8 +1,7 @@
 document.getElementById("settings-title").textContent = chrome.i18n.getMessage("Name");
 
-const visitTutorial = document.getElementById("visit-tutorial");
-visitTutorial.textContent = chrome.i18n.getMessage("SettingsVisitTutorial");
-visitTutorial.href = `https://anywhere-search.commonjs.work/${chrome.i18n.getMessage("LangCode") || "en"}.html`;
+document.getElementById("visit-tutorial").textContent = chrome.i18n.getMessage("SettingsVisitTutorial");
+document.getElementById("open-shortcuts").textContent = chrome.i18n.getMessage("SettingsOpenShortcuts");
 
 document.getElementById("settings-search-bar-position").textContent = chrome.i18n.getMessage("SettingsSearchBarPosition");
 document.getElementById("settings-sbp-tr").textContent = chrome.i18n.getMessage("SettingsSBPTr");

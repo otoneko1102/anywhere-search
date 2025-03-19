@@ -26,6 +26,9 @@
   "SettingsVisitTutorial": {
     "message": "Visit the tutorial"
   },
+  "SettingsOpenShortcuts": {
+    "message": "Open the shortcuts settings"
+  },
   "SettingsSearchBarPosition": {
     "message": "Search bar position"
   },

@@ -14,6 +14,9 @@
   "TogglePopup": {
     "message": "設定ポップアップを開く"
   },
+  "SettingsOpenShortcuts": {
+    "message": "ショートカット設定を開く"
+  },
   "ErrorIncorrect": {
     "message": "検索エンジン名と「*」を含む検索URLを入力してください。"
   },

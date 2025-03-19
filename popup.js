@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const visitTutorialButton = document.getElementById("visit-tutorial");
+  const openShortcutsButton = document.getElementById("open-shortcuts")
   const positionRadios = document.querySelectorAll("input[name='position']");
   const themeRadios = document.querySelectorAll("input[name='theme']");
   const searchModeRadios = document.querySelectorAll("input[name='searchMode']");
@@ -44,6 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
   setupInstantSave(positionRadios, "searchBarPosition", "updatePosition");
   setupInstantSave(themeRadios, "themeMode", "updateTheme");
   setupInstantSave(searchModeRadios, "searchMode", "updateSearchMode");
+
+  visitTutorialButton.addEventListener("click", () => {
+    window.open(`https://anywhere-search.commonjs.work/${chrome.i18n.getMessage("LangCode") || "en"}.html`);
+  });
+
+  openShortcutsButton.addEventListener("click", () => {
+    chrome.runtime.sendMessage({ action: "openShortcuts" });
+  });
 
   addEngineButton.addEventListener("click", () => {
     function disableAddButton() {
