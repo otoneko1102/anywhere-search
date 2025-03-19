@@ -1,0 +1,116 @@
+body {
+  background-color: #808080;
+  color: #000000;
+  font-family: sans-serif;
+  width: 400px;
+  padding: 10px;
+}
+
+#settings-title {
+  text-align: center;
+}
+
+#visit-tutorial {
+  color: #ffffff;
+  border: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vradio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.engine {
+  background-color: #cccccc;
+  border: 1px solid #333333;
+  margin: 0;
+  margin-left: 3px;
+  padding: 3px;
+  width: 368px;
+  height: 16px;
+}
+
+.engine:focus {
+  outline: none;
+}
+
+button {
+  margin: 4px;
+  padding: 3px;
+  width: 375px;
+  background-color: #4285F4;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357ae8;
+}
+
+button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+#error {
+  display: none;
+  color: #ff0000;
+}
+
+table {
+  margin: 3px;
+  padding: 3px;
+  width: 375px;
+  background-color: #cccccc;
+  border-color: #333333;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  background-color: #cccccc;
+  border: 1px solid #333333;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4285F4;
+  color: #ffffff;
+}
+
+.delete-btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #808080;
+}
+
+.delete-btn:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}

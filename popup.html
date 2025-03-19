@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Anywhere Search</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 id="settings-title">Anywhere Search</h1>
+    <button><a id="visit-tutorial" href="https://anywhere-search.commonjs.work/en.html" target="_blank">Visit the tutorial</a></button>
+    <h3 id="settings-search-bar-position">Search bar position</h3>
+    <div class="radio-group" id="position-group">
+      <label><input type="radio" name="position" value="top-right" checked><span id="settings-sbp-tr">Top Right</span></label>
+      <label><input type="radio" name="position" value="top-left"><span id="settings-sbp-tl">Top Left</span></label>
+      <label><input type="radio" name="position" value="bottom-right"><span id="settings-sbp-br">Bottom Right</span></label>
+      <label><input type="radio" name="position" value="bottom-left"><span id="settings-sbp-bl">Bottom Left</span></label>
+    </div>
+
+    <h3 id="settings-theme">Theme</h3>
+    <div class="radio-group" id="theme-group">
+      <label><input type="radio" name="theme" value="light" checked><span id="settings-theme-light">Light</span></label>
+      <label><input type="radio" name="theme" value="dark"><span id="settings-theme-dark">Dark</span></label>
+    </div>
+
+    <h3 id="settings-search-results">Search results display format</h3>
+    <div class="vradio-group" id="search-mode-group">
+      <label><input type="radio" name="searchMode" value="new-tab-switch" checked><span id="settings-sr-nta">Open in new tab (Active)</span></label>
+      <label><input type="radio" name="searchMode" value="new-tab-no-switch"><span id="settings-sr-ntna">Open in new tab (Not active)</span></label>
+      <label><input type="radio" name="searchMode" value="same-tab"><span id="settings-sr-ct">Open in current tab</span></label>
+    </div>
+
+    <h3 id="settings-manage-search-engines">Manage search engines</h3>
+    <input type="text" class="engine" id="engine-label" placeholder="Search engine name">
+    <input type="text" class="engine" id="engine-url" placeholder="URL (Set the search word place to '*')">
+    <button id="add-engine">Add</button>
+    <p id="error"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th id="settings-mse-label">Label</th>
+          <th id="settings-mse-url">URL</th>
+          <th id="settings-mse-del">Del</th>
+        </tr>
+      </thead>
+      <tbody id="search-engines"></tbody>
+    </table>
+
+    <script src="language.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

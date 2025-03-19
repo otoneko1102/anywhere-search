@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "__MSG_Name__",
+  "version": "0.0.1",
+  "description": "__MSG_Description__",
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "commands": {
+    "toggle_search": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "__MSG_ToggleSearchBar__"
+    },
+    "toggle_popup": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "__MSG_TogglePopup__"
+    }
+  },
+  "icons": {
+    "16": "icons/16x16.png",
+    "48": "icons/48x48.png",
+    "128": "icons/128x128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/search-button.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16x16.png",
+      "48": "icons/48x48.png",
+      "128": "icons/128x128.png"
+    }
+  }
+}

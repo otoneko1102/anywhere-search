@@ -1,0 +1,86 @@
+{
+  "Name": {
+    "message": "どこでも検索"
+  },
+  "Description": {
+    "message": "すべてのページに検索バーを追加します。"
+  },
+  "LangCode": {
+    "message": "ja"
+  },
+  "ToggleSearchBar": {
+    "message": "検索バーの表示切り替え"
+  },
+  "TogglePopup": {
+    "message": "設定ポップアップを開く"
+  },
+  "ErrorIncorrect": {
+    "message": "検索エンジン名と「*」を含む検索URLを入力してください。"
+  },
+  "ErrorAlready": {
+    "message": "その検索URLは既に登録されています。"
+  },
+  "ErrorSame": {
+    "message": "その検索エンジン名は既に登録されています。"
+  },
+  "SettingsVisitTutorial": {
+    "message": "チュートリアルを見る"
+  },
+  "SettingsSearchBarPosition": {
+    "message": "検索バーの位置"
+  },
+  "SettingsSBPTr": {
+    "message": "右上"
+  },
+  "SettingsSBPTl": {
+    "message": "左上"
+  },
+  "SettingsSBPBr": {
+    "message": "右下"
+  },
+  "SettingsSBPBl": {
+    "message": "左下"
+  },
+  "SettingsTheme": {
+    "message": "テーマ"
+  },
+  "SettingsThemeLight": {
+    "message": "ライト"
+  },
+  "SettingsThemeDark": {
+    "message": "ダーク"
+  },
+  "SettingsSearchResults": {
+    "message": "検索結果の表示形式"
+  },
+  "SettingsSRNTA": {
+    "message": "新しいタブで開く(アクティブ化する)"
+  },
+  "SettingsSRNTNA": {
+    "message": "新しいタブで開く(アクティブ化しない)"
+  },
+  "SettingsSRCT": {
+    "message": "現在のタブで開く"
+  },
+  "SettingsManageSearchEngines": {
+    "message": "検索エンジンの管理"
+  },
+  "SettingsEngineLabel": {
+    "message": "検索エンジン名"
+  },
+  "SettingsEngineUrl": {
+    "message": "URL(検索ワードの箇所を「*」に置き換えてください)"
+  },
+  "SettingsAddEngine": {
+    "message": "追加"
+  },
+  "SettingsMSELabel": {
+    "message": "ラベル"
+  },
+  "SettingsMSEUrl": {
+    "message": "URL"
+  },
+  "SettingsMSEDel": {
+    "message": "削除"
+  }
+}

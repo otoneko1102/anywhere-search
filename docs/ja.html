@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Tutorial - Anywhere Search</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <a href="https://github.com/otoneko1102/anywhere-search" target="_blank">
+        <img class="logo" src="img/github.svg" alt="GitHub">
+      </a>
+      <a href="https://discord.gg/yKW8wWKCnS" target="_blank">
+        <img class="logo" src="img/discord.svg" alt="Discord">
+      </a>
+    </header>
+    <h1 id="thanks">どこでも検索をインストールしてくれてありがとう！</h1>
+    <div class="side-group">
+      <div id="how-to-use" class="side-left">
+        <h2>使い方</h2>
+        <h3>初め方</h3>
+        <p><span class="keyboard">Alt</span><span class="keyboard">S</span> で検索バーを開きます(デフォルト)。</p>
+        <p><span class="keyboard">Alt</span><span class="keyboard">Shift</span><span class="keyboard">S</span> で設定ポップアップを開きます(デフォルト)。</p>
+        <p>コチラからショートカット設定を変更できます:</p><a id="open-shortcuts" class="bold" href="chrome://extensions/shortcuts">chrome://extensions/shortcuts</a>
+        <h3>その他のキー動作</h3>
+        <ul>
+          <li><span class="keyboard">/</span></li>
+          <p>検索バーに移動(検索バーが表示されている場合)。</p>
+          <li><span class="keyboard">Esc</span></li>
+          <p>検索バーから離れる(検索バーに移動している場合)。</p>
+          <li><span class="keyboard">↑</span><span class="keyboard">↓</span></li>
+          <p>検索エンジンの切り替え(検索バーに移動している場合)。</p>
+          <li><span class="keyboard">Enter</span></li>
+          <p>検索(検索バーに移動している場合)。</p>
+        </ul>
+      </div>
+      <div class="img-with-description">
+        <img id="img-popup" src="img/ja_popup.png" alt="popup">
+        <p>どこでも検索のポップアップ</p>
+      </div>
+    </div>
+    <div class="side-group">
+      <div class="side-left">
+        <h3>「検索バーの位置」とは？</h3>
+        <p>4つの位置から検索バーの位置を選択できます:</p>
+        <div class="img-grid">
+          <div class="img-with-description">
+            <img src="img/tl.png">
+            <p>左上</p>
+          </div>
+          <div class="img-with-description">
+            <img src="img/tr.png">
+            <p>右上</p>
+          </div>
+          <div class="img-with-description">
+            <img src="img/bl.png">
+            <p>左下</p>
+          </div>
+          <div class="img-with-description">
+            <img src="img/br.png">
+            <p>右下</p>
+          </div>
+        </div>
+      </div>
+      <div class="side-right">
+        <h3>「テーマ」とは？</h3>
+        <p>2つのテーマから検索バーのテーマを選択できます:</p>
+        <div class="img-grid">
+          <div class="img-with-description">
+            <img src="img/light.png">
+            <p>ライト</p>
+          </div>
+          <div class="img-with-description">
+            <img src="img/dark.png">
+            <p>ダーク</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-group">
+      <div class="side-left">
+        <h3>「検索結果の表示形式」とは？</h3>
+        <ul>
+          <li>新しいタブで開く(アクティブ化する)</li>
+          <p>デフォルト。新しいタブで検索結果を開き、遷移します。</p>
+          <li>新しいタブで開く(アクティブ化しない)</li>
+          <p>新しいタブで検索結果を開きますが、遷移しません。</p>
+          <li>現在のタブで開く</li>
+          <p>現在のタブで検索結果を開きます。</p>
+        </ul>
+      </div>
+      <div class="side-right">
+        <h3>「検索エンジンの管理」とは？</h3>
+        <p>この動画で詳しく説明します。</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fjxa4HG1qX0?si=oOY1FnclI53GmBav" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

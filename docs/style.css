@@ -1,0 +1,140 @@
+body {
+  background-color: #808080;
+  color: #000000;
+  font-family: sans-serif;
+  min-width: 320px;
+  max-width: 100vw;
+  margin: 30px;
+  padding: 30px;
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  gap: 30px;
+  width: 100%;
+  background: #666666;
+  top: 0;
+  left: 0;
+}
+
+p, a {
+  font-size: 16px;
+  line-height: 2.5;
+  word-wrap: break-word;
+}
+
+ul li {
+  font-weight: bolder;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo {
+  width: auto;
+  height: 50px;
+  padding: 5px;
+}
+
+.logo:hover {
+  filter: brightness(0.6);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.side-group {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.side-left, .side-right {
+  min-width: 300px;
+  max-width: 40%;
+}
+
+.side-left {
+  flex: 1;
+}
+
+.side-right {
+  flex: auto;
+}
+
+.vertical-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.img-with-description {
+  display: block;
+  background-color: #cccccc;
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 300px;
+  max-height: 450px;
+}
+
+.img-with-description p {
+  color: #333333;
+  text-align: center;
+  font-size: 10px;
+}
+
+.keyboard {
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  margin: 2px;
+  padding: 5px 10px;
+}
+
+#thanks {
+  text-align: center;
+}
+
+#how-to-use {
+  max-width: 600px;
+  margin: auto;
+}
+
+#image-overlay {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

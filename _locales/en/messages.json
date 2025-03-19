@@ -1,0 +1,86 @@
+{
+  "Name": {
+    "message": "Anywhere Search"
+  },
+  "Description": {
+    "message": "Add a search bar to all pages."
+  },
+  "LangCode": {
+    "message": "en"
+  },
+  "ToggleSearchBar": {
+    "message": "Toggle search bar"
+  },
+  "TogglePopup": {
+    "message": "Open settings popup"
+  },
+  "ErrorIncorrect": {
+    "message": "Enter search engine name and search URL containing '*'."
+  },
+  "ErrorAlready": {
+    "message": "The search URL is already registered."
+  },
+  "ErrorSame": {
+    "message": "The search engine name is already registered."
+  },
+  "SettingsVisitTutorial": {
+    "message": "Visit the tutorial"
+  },
+  "SettingsSearchBarPosition": {
+    "message": "Search bar position"
+  },
+  "SettingsSBPTr": {
+    "message": "Top Right"
+  },
+  "SettingsSBPTl": {
+    "message": "Top Left"
+  },
+  "SettingsSBPBr": {
+    "message": "Bottom Right"
+  },
+  "SettingsSBPBl": {
+    "message": "Bottom Left"
+  },
+  "SettingsTheme": {
+    "message": "Theme"
+  },
+  "SettingsThemeLight": {
+    "message": "Light"
+  },
+  "SettingsThemeDark": {
+    "message": "Dark"
+  },
+  "SettingsSearchResults": {
+    "message": "Search results display format"
+  },
+  "SettingsSRNTA": {
+    "message": "Open in new tab (Active)"
+  },
+  "SettingsSRNTNA": {
+    "message": "Open in new tab (Not active)"
+  },
+  "SettingsSRCT": {
+    "message": "Open in current tab"
+  },
+  "SettingsManageSearchEngines": {
+    "message": "Manage search engines"
+  },
+  "SettingsEngineLabel": {
+    "message": "Search engine name"
+  },
+  "SettingsEngineUrl": {
+    "message": "URL (Set the search word place to '*')"
+  },
+  "SettingsAddEngine": {
+    "message": "Add"
+  },
+  "SettingsMSELabel": {
+    "message": "Label"
+  },
+  "SettingsMSEUrl": {
+    "message": "URL"
+  },
+  "SettingsMSEDel": {
+    "message": "Del"
+  }
+}
