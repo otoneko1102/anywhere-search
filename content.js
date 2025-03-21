@@ -64,7 +64,7 @@
     style.textContent = `
       #anywhere-search-container {
         position: fixed !important;
-        display: flex !important;
+        display: flex;
         align-items: center !important;
         background: #ffffff !important;
         padding: 5px !important;
