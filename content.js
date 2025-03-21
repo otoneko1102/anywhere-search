@@ -64,7 +64,7 @@
     style.textContent = `
       #anywhere-search-container {
         position: fixed !important;
-        display: flex;
+        display: flex !important;
         align-items: center !important;
         background: #ffffff !important;
         padding: 5px !important;
@@ -230,22 +230,6 @@
       chrome.storage.sync.set({ searchEngine: select.value });
     }
   });
-
-  /*
-  chrome.runtime.onMessage.addListener((message) => {
-    if (message.action === "toggleSearch") {
-      toggleSearchBar();
-    } else if (message.action === "updatePosition") {
-      applyPosition(message.position);
-    } else if (message.action === "updateTheme") {
-      applyTheme(message.theme);
-    } else if (message.action === "updateSearchEngines") {
-      updateSearchEngines(message.engines, select.value);
-    } else if (message.action === "updateSearchMode") {
-      searchMode = message.value;
-    }
-  });
-  */
 
   chrome.runtime.onMessage.addListener((message) => {
     if (message.action === "toggleSearch") {
