@@ -5,7 +5,7 @@
   const searchContainer = document.createElement("div");
   searchContainer.id = "anywhere-search-container";
   searchContainer.innerHTML = `
-    <input type="text" id="anywhere-search-input" autocomplete="off">
+    <input type="search" id="anywhere-search-input" autocomplete="off">
     <select id="anywhere-search-engine"></select>
     <button id="anywhere-search-btn">
       <img id="anywhere-search-icon" src="${chrome.runtime.getURL("assets/search-button.svg")}" alt="Search">
