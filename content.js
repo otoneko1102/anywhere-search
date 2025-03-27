@@ -219,7 +219,7 @@
         }
       });
 
-      toggleSearchBar();
+      // toggleSearchBar();
     }
   }
 
