@@ -6,6 +6,7 @@
   searchContainer.id = "anywhere-search-container";
   searchContainer.innerHTML = `
     <input type="search" id="anywhere-search-input" autocomplete="off">
+    <div id="anywhere-search-partition"></div>
     <select id="anywhere-search-engine"></select>
     <button id="anywhere-search-btn">
       <img id="anywhere-search-icon" src="${chrome.runtime.getURL("assets/search-button.svg")}" alt="Search">
@@ -14,6 +15,7 @@
   document.body.appendChild(searchContainer);
 
   const input = document.getElementById("anywhere-search-input");
+  const part = document.getElementById("anywhere-search-partition");
   const select = document.getElementById("anywhere-search-engine");
   const button = document.getElementById("anywhere-search-btn");
 
@@ -50,6 +52,7 @@
     searchContainer.style.setProperty("background", bgColor, "important");
     input.style.setProperty("background", bgColor, "important");
     input.style.setProperty("color", textColor, "important");
+    part.style.setProperty("border-color", textColor, "important");
     select.style.setProperty("background", bgColor, "important");
     select.style.setProperty("color", textColor, "important");
     button.style.setProperty("background", bgColor, "important");
@@ -68,8 +71,12 @@
         align-items: center !important;
         background: #ffffff !important;
         padding: 5px !important;
-        width: 350px !important;
+        width: 380px !important;
         height: 40px !important;
+        min-width: 380px !important;
+        min-height: 40px !important;
+        max-width: 380px !important;
+        max-height: 40px !important;
         border-radius: 35px !important;
         border: 1px solid rgba(80, 80, 80, 0.5) !important;
         box-shadow: 5px 5px 5px rgba(80, 80, 80, 0.5) !important;
@@ -86,6 +93,10 @@
         padding: 5px !important;
         width: 250px !important;
         height: 25px !important;
+        min-width: 250px !important;
+        min-height: 25px !important;
+        max-width: 250px !important;
+        max-height: 25px !important;
       }
 
       #anywhere-search-input:focus {
@@ -93,12 +104,26 @@
         outline: none !important;
       }
 
+      #anywhere-search-partition {
+        border: 1px solid !important;
+        border-color: #000000 !important;
+        opacity: 0.3 !important;
+        width: 0 !important;
+        height: 80% !important;
+        min-width: 0 !important;
+        min-height: 80% !important;
+        max-width: 0 !important;
+        max-height: 75% !important;
+      }
+
       #anywhere-search-engine {
+        font-size: 12px !important;
         border: none !important;
         border-radius: 15px !important;
         outline: none !important;
         padding: 3px !important;
         margin: 0 5px !important;
+        width: 75px !important;
         height: 30px !important;
         cursor: pointer !important;
       }
@@ -118,18 +143,18 @@
         min-height: 30px !important;
         max-width: 30px !important;
         max-height: 30px !important;
-        margin: 5px !important;
-        padding: 5px 10px !important;
+        margin: 0 !important;
+        padding: 0 3px !important;
         cursor: pointer !important;
       }
 
       #anywhere-search-icon {
-        width: 20px !important;
-        height: 20px !important;
-        min-width: 20px !important;
-        min-height: 20px !important;
-        max-width: 20px !important;
-        max-height: 20px !important;
+        width: 25px !important;
+        height: 25px !important;
+        min-width: 25px !important;
+        min-height: 25px !important;
+        max-width: 25px !important;
+        max-height: 25px !important;
       }
     `;
     document.head.appendChild(style);
