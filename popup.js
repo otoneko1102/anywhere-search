@@ -21,11 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
+  function updateThemeClass(theme) {
+    document.body.classList.toggle("dark", theme === "dark");
+    document.body.classList.toggle("light", theme === "light");
+  }
+
   function updateUI(data) {
     document.querySelector(`input[name='position'][value="${data.searchBarPosition || "top-right"}"]`).checked = true;
     document.querySelector(`input[name='theme'][value="${data.themeMode || "light"}"]`).checked = true;
     document.querySelector(`input[name='searchMode'][value="${data.searchMode || "new-tab-switch"}"]`).checked = true;
 
+    updateThemeClass(data.themeMode || "light");
     const engines = data.searchEngines && data.searchEngines.length ? data.searchEngines : [defaultEngine];
     chrome.storage.sync.set({ searchEngines: engines }, () => updateEngineList(engines));
   }
@@ -38,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newValue = e.target.value;
         chrome.storage.sync.set({ [storageKey]: newValue }, () => {
           sendMessageToContent({ action: messageAction, value: newValue });
+          if (storageKey === "themeMode") updateThemeClass(newValue);
         });
       });
     });

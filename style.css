@@ -1,10 +1,18 @@
 body {
-  background-color: #808080;
-  color: #000000;
   font-family: sans-serif;
   width: 400px;
   height: 600px;
   padding: 10px;
+}
+
+.light {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark {
+  background-color: #4d5160;
+  color: #ffffff;
 }
 
 #settings-title {
@@ -74,7 +82,7 @@ button:disabled {
   color: #ff0000;
 }
 
-table {
+.light table, .dark table {
   margin: 3px;
   padding: 3px;
   width: 375px;
@@ -84,16 +92,17 @@ table {
   margin-top: 10px;
 }
 
-th, td {
+.light th, .dark th {
+  background-color: #4285F4;
+  color: #ffffff;
+}
+
+.light td, .dark td {
   background-color: #cccccc;
+  color: #000000;
   border: 1px solid #333333;
   padding: 8px;
   text-align: left;
-}
-
-th {
-  background-color: #4285F4;
-  color: #ffffff;
 }
 
 .delete-btn {
