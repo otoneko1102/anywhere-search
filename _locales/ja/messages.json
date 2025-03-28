@@ -97,5 +97,29 @@
   },
   "Export": {
     "message": "エクスポート"
+  },
+  "SettingsIEInvalidPosition": {
+    "message": "無効な位置です・"
+  },
+  "SettingsIESE": {
+    "message": "検索エンジンの先頭はGoogleである必要があります。"
+  },
+  "SettingsIEMissing": {
+    "message": "ラベルもしくはURLが間違っています。"
+  },
+  "SettingsIEInvalidUrlFormat": {
+    "message": "無効なURL形式です。"
+  },
+  "SettingsIEInvalidSearchMode": {
+    "message": "検索モードが無効です。"
+  },
+  "SettingsIEInvalidTheme": {
+    "message": "無効なテーマです。"
+  },
+  "SettingsIESuccessful": {
+    "message": "インポートが成功しました。"
+  },
+  "SettingsIEInvalidFormat": {
+    "message": "無効なJSON形式です。"
   }
 }
