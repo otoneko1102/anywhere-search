@@ -1,8 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+
+* {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
 body {
-  font-family: sans-serif;
   width: 400px;
-  height: 600px;
+  margin-bottom: 30px;
   padding: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #4285f4;
+}
+
+a:hover {
+  color: #357ae8;
 }
 
 .light {
@@ -43,12 +60,13 @@ label {
 }
 
 .engine {
+  font-size: 12px;
   background-color: #cccccc;
   border: 1px solid #333333;
   margin: 0;
   margin-left: 3px;
   padding: 3px;
-  width: 368px;
+  width: 375px;
   height: 16px;
 }
 
@@ -60,7 +78,7 @@ button {
   margin: 4px;
   padding: 3px;
   width: 375px;
-  background-color: #4285F4;
+  background-color: #4285f4;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -87,14 +105,15 @@ button:disabled {
   padding: 3px;
   width: 375px;
   background-color: #cccccc;
-  border-color: #333333;
+  border: 1px solid #333333;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
 .light th, .dark th {
-  background-color: #4285F4;
+  background-color: #4285f4;
   color: #ffffff;
+  border: 1px solid #333333;
 }
 
 .light td, .dark td {
@@ -123,4 +142,22 @@ button:disabled {
 .delete-btn:disabled {
   background-color: #808080;
   cursor: not-allowed;
+}
+
+#settings-json {
+  font-size: 12px;
+  background-color: #cccccc;
+  border: 1px solid #333333;
+  margin: 0;
+  margin-left: 3px;
+  padding: 3px;
+  width: 368px;
+  height: 150px;
+  min-height: 150px;
+  max-height: 300px;
+  resize: vertical;
+}
+
+#settings-json:focus {
+  outline: none;
 }

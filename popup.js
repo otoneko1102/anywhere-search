@@ -156,4 +156,130 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // Export / Import
+  const exportButton = document.getElementById("export-settings");
+  const importButton = document.getElementById("import-settings");
+  const settingsJsonTextarea = document.getElementById("settings-json");
+  const noticeMessage = document.getElementById("notice");
+
+  function disableImportButton() {
+    importButton.disabled = true;
+    setTimeout(() => {
+      importButton.disabled = false;
+    }, 1000);
+  }
+
+  function showNoticeMessage(content, color = "#ff0000") {
+    disableImportButton();
+    noticeMessage.textContent = content;
+    noticeMessage.style.color = color;
+    noticeMessage.style.display = "block";
+    setTimeout(() => {
+      noticeMessage.textContent = '';
+      noticeMessage.style.display = 'none';
+    }, 1000);
+  }
+
+  exportButton.addEventListener("click", () => {
+    chrome.storage.sync.get(["searchBarPosition", "themeMode", "searchEngines", "searchMode"], (data) => {
+      settingsJsonTextarea.value = JSON.stringify(data, null, 2);
+    });
+  });
+
+  importButton.addEventListener("click", () => {
+    try {
+      const newSettings = JSON.parse(settingsJsonTextarea.value);
+
+      // Position Check
+      if (newSettings?.searchBarPosition) {
+        const newPosition = newSettings.searchBarPosition;
+        if (
+          newPosition !== "top-right" &&
+          newPosition !== "top-left" &&
+          newPosition !== "bottom-right" &&
+          newPosition !== "bottom-left"
+        ) {
+          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidPosition"));
+          return;
+        }
+      }
+
+      // Search Engines Check
+      if (
+        newSettings.searchEngines?.length <= 0 ||
+        !newSettings.searchEngines[0]?.url ||
+        newSettings.searchEngines[0]?.url !== "https://www.google.com/search?q=*" ||
+        !newSettings.searchEngines[0]?.label ||
+        newSettings.searchEngines[0]?.label !== "Google"
+      ) {
+        showNoticeMessage(chrome.i18n.getMessage("SettingsIESE"));
+        return;
+      }
+      if (newSettings.searchEngines?.length > 0) {
+        const newEngines = newSettings.searchEngines;
+        for (const engine of newEngines) {
+          if (!engine?.label || !engine?.url) {
+            showNoticeMessage(chrome.i18n.getMessage("SettingsIEMissing"));
+            return;
+          }
+        }
+        const newLabels = newEngines.map(engine => engine.label);
+        const newUrls = newEngines.map(engine => engine.url);
+        for (const url of newUrls) {
+          if (
+            (
+              !url.startsWith("http://") &&
+              !url.startsWith("https://")
+            ) ||
+            !url.includes("*")
+          ) {
+            showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidUrlFormat"));
+            return;
+          }
+        }
+        /*
+        const hasSameLabels = new Set(newLabels).size !== newLabels.length;
+        const hasSameUrls = new Set(newUrls).size !== newUrls.length;
+        if (hasSameLabels || hasSameUrls) {
+          showNoticeMessage(chrome.i18n.getMessage("SettingsIEMissing"));
+          return;
+        }
+        */
+      }
+
+      // Search Mode Check
+      if (newSettings?.searchMode) {
+        const newMode = newSettings.searchMode;
+        if (
+          newMode !== "new-tab-switch" &&
+          newMode !== "new-tab-no-switch" &&
+          newMode !== "same-tab"
+        ) {
+          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidSearchMode"));
+          return;
+        }
+      }
+
+      // Theme Check
+      if (newSettings?.themeMode) {
+        const newTheme = newSettings.themeMode;
+        if (
+          newTheme !== "light" &&
+          newTheme !== "dark"
+        ) {
+          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidTheme"));
+          return;
+        }
+      }
+
+      chrome.storage.sync.set(newSettings, () => {
+        updateUI(newSettings);
+        sendMessageToContent({ action: "updateAllSettings", settings: newSettings });
+        showNoticeMessage(chrome.i18n.getMessage("SettingsIESuccessful"), "#008000");
+      });
+    } catch (error) {
+      showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidFormat"));
+    }
+  });
 });
