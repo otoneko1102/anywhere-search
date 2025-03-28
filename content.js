@@ -65,7 +65,10 @@
     const style = document.createElement("style");
     style.id = "anywhere-search-style";
     style.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+
       #anywhere-search-container {
+        font-family: font-family: 'Zen Kaku Gothic New', sans-serif !important;
         position: fixed !important;
         display: flex;
         align-items: center !important;
@@ -84,18 +87,18 @@
       }
 
       #anywhere-search-input {
-        font-family: sans-serif !important;
+        font-family: font-family: 'Zen Kaku Gothic New', sans-serif !important;
         background-color: #ffffff !important;
         color: #000000 !important;
         border: none !important;
         border-radius: 15px;
         outline: none !important;
         padding: 5px !important;
-        width: 250px !important;
+        width: 240px !important;
         height: 25px !important;
-        min-width: 250px !important;
+        min-width: 240px !important;
         min-height: 25px !important;
-        max-width: 250px !important;
+        max-width: 240px !important;
         max-height: 25px !important;
       }
 
@@ -113,18 +116,24 @@
         min-width: 0 !important;
         min-height: 80% !important;
         max-width: 0 !important;
-        max-height: 75% !important;
+        max-height: 80% !important;
       }
 
       #anywhere-search-engine {
-        font-size: 12px !important;
+        font-family: font-family: 'Zen Kaku Gothic New', sans-serif !important;
+        font-size: 10px !important;
+        text-align: left !important;
         border: none !important;
         border-radius: 15px !important;
         outline: none !important;
-        padding: 3px !important;
-        margin: 0 5px !important;
-        width: 75px !important;
+        padding: 4px !important;
+        margin: 1px 5px !important;
+        width: 85px !important;
         height: 30px !important;
+        min-width: 85px !important;
+        min-height: 30px !important;
+        max-width: 85px !important;
+        max-height: 30px !important;
         cursor: pointer !important;
       }
 
