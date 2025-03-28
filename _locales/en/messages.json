@@ -85,5 +85,41 @@
   },
   "SettingsMSEDel": {
     "message": "Del"
+  },
+  "SettingsImportExport": {
+    "message": "Import / Export"
+  },
+  "SettingsJson": {
+    "message": "Paste settings data here"
+  },
+  "Import": {
+    "message": "Import"
+  },
+  "Export": {
+    "message": "Export"
+  },
+  "SettingsIEInvalidPosition": {
+    "message": "Invalid position."
+  },
+  "SettingsIESE": {
+    "message": "Search Engines must start with Google."
+  },
+  "SettingsIEMissing": {
+    "message": "Missing label or URL."
+  },
+  "SettingsIEInvalidUrlFormat": {
+    "message": "Invalid URL format."
+  },
+  "SettingsIEInvalidSearchMode": {
+    "message": "Invalid Search Mode."
+  },
+  "SettingsIEInvalidTheme": {
+    "message": "Invalid Theme."
+  },
+  "SettingsIESuccessful": {
+    "message": "Successful import."
+  },
+  "SettingsIEInvalidFormat": {
+    "message": "Invalid JSON format."
   }
 }

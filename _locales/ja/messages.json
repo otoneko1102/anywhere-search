@@ -85,5 +85,17 @@
   },
   "SettingsMSEDel": {
     "message": "削除"
+  },
+  "SettingsImportExport": {
+    "message": "インポート / エクスポート"
+  },
+  "SettingsJson": {
+    "message": "ここに設定データをペースト"
+  },
+  "Import": {
+    "message": "インポート"
+  },
+  "Export": {
+    "message": "エクスポート"
   }
 }

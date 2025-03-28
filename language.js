@@ -25,3 +25,8 @@ document.getElementById("add-engine").textContent = chrome.i18n.getMessage("Sett
 document.getElementById("settings-mse-label").textContent = chrome.i18n.getMessage("SettingsMSELabel");
 document.getElementById("settings-mse-url").textContent = chrome.i18n.getMessage("SettingsMSEUrl");
 document.getElementById("settings-mse-del").textContent = chrome.i18n.getMessage("SettingsMSEDel");
+
+document.getElementById("settings-import-export").textContent = chrome.i18n.getMessage("SettingsImportExport");
+document.getElementById("settings-json").placeholder = chrome.i18n.getMessage("SettingsJson");
+document.getElementById("import-settings").textContent = chrome.i18n.getMessage("Import");
+document.getElementById("export-settings").textContent = chrome.i18n.getMessage("Export");
