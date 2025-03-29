@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.set({ searchEngines: engines }, () => updateEngineList(engines));
   }
 
-  chrome.storage.sync.get(["searchBarPosition", "themeMode", "searchEngines", "searchMode"], updateUI);
+  chrome.storage.sync.get(["searchBarPosition", "themeMode", "searchMode", "searchEngines"], updateUI);
 
   function setupInstantSave(radioGroup, storageKey, messageAction) {
     radioGroup.forEach(radio => {
@@ -158,10 +158,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Export / Import
+  const defaultButton = document.getElementById("default-settings");
   const exportButton = document.getElementById("export-settings");
   const importButton = document.getElementById("import-settings");
   const settingsJsonTextarea = document.getElementById("settings-json");
   const noticeMessage = document.getElementById("notice");
+
+  defaultButton.addEventListener("click", () => {
+    const defaultSettings = {
+      searchBarPosition: "top-right",
+      themeMode: "light",
+      searchMode: "new-tab-switch",
+      searchEngines: [
+        {
+          "label": "Google",
+          "url": "https://www.google.com/search?q=*"
+        }
+      ]
+    };
+
+    function disableDefaultButton() {
+      defaultButton.disabled = true;
+      setTimeout(() => {
+        defaultButton.disabled = false;
+      }, 1000);
+    }
+
+    chrome.storage.sync.set(defaultSettings, () => {
+      updateUI(defaultSettings);
+      sendMessageToContent({ action: "updateAllSettings", settings: defaultSettings });
+      disableDefaultButton();
+    });
+  })
 
   function disableImportButton() {
     importButton.disabled = true;
@@ -182,8 +210,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   exportButton.addEventListener("click", () => {
-    chrome.storage.sync.get(["searchBarPosition", "themeMode", "searchEngines", "searchMode"], (data) => {
-      settingsJsonTextarea.value = JSON.stringify(data, null, 2);
+    chrome.storage.sync.get(["searchBarPosition", "themeMode", "searchMode", "searchEngines"], (data) => {
+      const displayedData = {
+        searchBarPosition: data.searchBarPosition,
+        themeMode: data.themeMode,
+        searchMode: data.searchMode,
+        searchEngines: data.searchEngines
+      };
+      settingsJsonTextarea.value = JSON.stringify(displayedData, null, 2);
     });
   });
 
@@ -201,6 +235,31 @@ document.addEventListener("DOMContentLoaded", () => {
           newPosition !== "bottom-left"
         ) {
           showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidPosition"));
+          return;
+        }
+      }
+
+      // Search Mode Check
+      if (newSettings?.searchMode) {
+        const newMode = newSettings.searchMode;
+        if (
+          newMode !== "new-tab-switch" &&
+          newMode !== "new-tab-no-switch" &&
+          newMode !== "same-tab"
+        ) {
+          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidSearchMode"));
+          return;
+        }
+      }
+
+      // Theme Check
+      if (newSettings?.themeMode) {
+        const newTheme = newSettings.themeMode;
+        if (
+          newTheme !== "light" &&
+          newTheme !== "dark"
+        ) {
+          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidTheme"));
           return;
         }
       }
@@ -246,31 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
         */
-      }
-
-      // Search Mode Check
-      if (newSettings?.searchMode) {
-        const newMode = newSettings.searchMode;
-        if (
-          newMode !== "new-tab-switch" &&
-          newMode !== "new-tab-no-switch" &&
-          newMode !== "same-tab"
-        ) {
-          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidSearchMode"));
-          return;
-        }
-      }
-
-      // Theme Check
-      if (newSettings?.themeMode) {
-        const newTheme = newSettings.themeMode;
-        if (
-          newTheme !== "light" &&
-          newTheme !== "dark"
-        ) {
-          showNoticeMessage(chrome.i18n.getMessage("SettingsIEInvalidTheme"));
-          return;
-        }
       }
 
       chrome.storage.sync.set(newSettings, () => {
