@@ -25,7 +25,21 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === "install") {
-    chrome.tabs.create({ url: `https://anywhere-search.commonjs.work/${chrome.i18n.getMessage("LangCode")}.html`, active: true });
+    chrome.storage.sync.set({}, () => console.log("Storage cleared."));
+    const data = {
+      searchBarPosition: "top-right",
+      themeMode: "light",
+      searchMode: "new-tab-switch",
+      searchEngines: [
+        {
+          "label": "Google",
+          "url": "https://www.google.com/search?q=*"
+        }
+      ]
+    };
+    chrome.storage.sync.set(data, () => {
+      chrome.tabs.create({ url: `https://anywhere-search.commonjs.work/${chrome.i18n.getMessage("LangCode")}.html`, active: true });
+    });
   }
 
   if (details.reason === "update") {
