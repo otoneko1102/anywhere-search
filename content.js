@@ -2,6 +2,15 @@
   if (window.anywhereSearchInjected) return;
   window.anywhereSearchInjected = true;
 
+  // Open Shortcuts
+  if (location.hostname === "anywhere-search.commonjs.work") {
+    const openShortcuts = document.getElementById("open-shortcuts");
+    openShortcuts.addEventListener("click", (event) => {
+      event.preventDefault();
+      chrome.runtime.sendMessage({ action: "openShortcuts" });
+    });
+  }
+
   const searchContainer = document.createElement("div");
   searchContainer.id = "anywhere-search-container";
   searchContainer.innerHTML = `
