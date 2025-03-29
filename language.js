@@ -28,5 +28,6 @@ document.getElementById("settings-mse-del").textContent = chrome.i18n.getMessage
 
 document.getElementById("settings-import-export").textContent = chrome.i18n.getMessage("SettingsImportExport");
 document.getElementById("settings-json").placeholder = chrome.i18n.getMessage("SettingsJson");
+document.getElementById("default-settings").textContent = chrome.i18n.getMessage("Default");
 document.getElementById("import-settings").textContent = chrome.i18n.getMessage("Import");
 document.getElementById("export-settings").textContent = chrome.i18n.getMessage("Export");

@@ -92,6 +92,9 @@
   "SettingsJson": {
     "message": "ここに設定データをペースト"
   },
+  "Default": {
+    "message": "デフォルト設定に戻す"
+  },
   "Import": {
     "message": "インポート"
   },
