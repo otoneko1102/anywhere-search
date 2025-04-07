@@ -12,7 +12,7 @@
     "message": "検索バーの表示切り替え"
   },
   "TogglePopup": {
-    "message": "設定ポップアップを開く"
+    "message": "設定ポップアップを開く(非推奨)"
   },
   "SettingsOpenShortcuts": {
     "message": "ショートカット設定を開く"

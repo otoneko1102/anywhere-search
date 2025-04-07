@@ -12,7 +12,7 @@
     "message": "Toggle search bar"
   },
   "TogglePopup": {
-    "message": "Open settings popup"
+    "message": "Open settings popup (deprecated)"
   },
   "ErrorIncorrect": {
     "message": "Enter search engine name and search URL containing '*'."
