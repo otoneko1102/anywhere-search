@@ -2,11 +2,16 @@
   "manifest_version": 3,
   "default_locale": "en",
   "name": "__MSG_Name__",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "__MSG_Description__",
   "permissions": ["tabs", "scripting", "storage"],
   "host_permissions": ["<all_urls>"],
   "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      }
+    },
     "toggle_search": {
       "suggested_key": {
         "default": "Alt+S"
@@ -14,9 +19,6 @@
       "description": "__MSG_ToggleSearchBar__"
     },
     "toggle_popup": {
-      "suggested_key": {
-        "default": "Alt+Shift+S"
-      },
       "description": "__MSG_TogglePopup__"
     }
   },
